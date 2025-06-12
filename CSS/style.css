@@ -1,0 +1,401 @@
+        :root {
+            --primary-color: #d4af37;
+            --secondary-color: #2c2c2c;
+            --page-color: #fffef5;
+            --text-color: #2c2c2c;
+            --dark-page-color: #2c2c2c;
+            --dark-text-color: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dark-mode {
+            background: #1a1a1a;
+            color: var(--dark-text-color);
+        }
+        
+        .dark-mode .quran-page {
+            background: var(--dark-page-color);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .quran-page {
+            background: var(--page-color);
+            border: 5px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            min-height: 600px;
+            position: relative;
+        }
+        
+        .verse {
+            font-family: 'Amiri Quran', serif;
+            font-size: 2rem;
+            line-height: 2.8;
+            text-align: justify;
+            position: relative;
+            padding: 15px 0;
+            margin-bottom: 15px;
+            transition: all 0.2s ease;
+        }
+        
+        .verse:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-radius: 5px;
+        }
+        
+        .verse-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: bold;
+        }
+        
+        .surah-list {
+            display: none;
+            background: var(--page-color);
+            border: 3px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
+        
+        .surah-btn {
+            font-size: 1.3rem;
+            margin: 8px;
+            background: var(--secondary-color);
+            color: #fff;
+            border: none;
+            transition: all 0.3s;
+            border-radius: 8px;
+            padding: 10px 15px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .surah-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        .search-bar {
+            max-width: 600px;
+            margin: 25px auto;
+            position: relative;
+        }
+        
+        .search-bar input {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 2px solid var(--primary-color);
+            font-size: 1.1rem;
+        }
+        
+        .search-bar i {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            color: var(--primary-color);
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background: var(--primary-color);
+        }
+        
+        .context-menu {
+            position: absolute;
+            background: #fff;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: none;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 200px;
+        }
+        
+        .context-menu-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+        
+        .context-menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .context-menu-item:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        
+        .pagination {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .pagination button {
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            min-width: 150px;
+        }
+        
+        .pagination button:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        .modal-content {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--page-color);
+            border: 3px solid var(--primary-color);
+            border-radius: 15px;
+            color: #333;
+        }
+        
+        .modal-header {
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .modal-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .control-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .control/btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .bookmark-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .bookmark-btn.active {
+            color: var(--primary-color);
+        }
+        
+        .bookmark-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .bookmarks-list {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--page-color);
+            border: 3px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: none;
+            z-index: 1100;
+        }
+        
+        .bookmark-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .bookmark-item:last-child {
+            border-bottom: none;
+        }
+        
+        .remove-bookmark {
+            color: #ff6b6b;
+            background: transparent;
+            border: none;
+            font-size: 1.2rem;
+        }
+        
+        .loading-spinner {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .verse-highlight {
+            background-color: rgba(212, 175, 55, 0.3);
+            border-radius: 5px;
+        }
+        
+        .settings-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--page-color);
+            border: 3px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            display: none;
+            z-index: 1100;
+        }
+        
+        .settings-option {
+            margin-bottom: 20px;
+        }
+        
+        .settings-option label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .settings-option select, .settings-option input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .close-settings {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .verse {
+                font-size: 1.6rem;
+                line-height: 2.4;
+            }
+            
+            .quran-page {
+                padding: 15px;
+                min-height: 400px;
+            }
+            
+            .controls {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .control-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
